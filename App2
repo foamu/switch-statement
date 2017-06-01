@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class App2 {
+
+	public static void main(String[] args) {
+
+		int colorNum = (int) (Math.random() * 8 + 1);
+		String color = null;
+
+		switch (colorNum) {
+
+		case 1:
+			color = "Red";
+			break;
+		case 2:
+			color = "Green";
+			break;
+		case 3:
+			color = "Blue";
+			break;
+		case 4:
+			color = "Black";
+			break;
+		case 5:
+			color = "Orange";
+			break;
+		case 6:
+			color = "Yellow";
+			break;
+		case 7:
+			color = "Purple";
+			break;
+		case 8:
+			color = "Teal";
+			break;
+
+		}
+
+		Scanner colorQuestion = new Scanner(System.in);
+		String colorAnswer;
+
+		do {
+			System.out.println("Please enter the color that was generated: " + color);
+			colorAnswer = colorQuestion.nextLine();
+
+			if (!colorAnswer.equalsIgnoreCase(color)) {
+				System.out.println("Icorrect value.");
+			}
+		} while (!colorAnswer.equalsIgnoreCase(color));
+
+		colorQuestion.close();
+		System.out.println("You entered the correct value of: " + color + ".");
+
+	}
+}
